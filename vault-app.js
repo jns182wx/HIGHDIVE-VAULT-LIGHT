@@ -126,7 +126,7 @@
     app().innerHTML = `
       <div class="view">
         <section class="hero">
-          <img class="logo" src="assets/highdive-logo.png" alt="High Dive" />
+          <img class="logo" src="assets/highdive-logo-full.png" alt="High Dive Cocktail Bar" />
           <div class="eyebrow">The Vault</div>
           <p class="lede">Every bottle behind the bar — what it tastes like, and what it’s best in.</p>
           <p class="sub">Tap a shelf to explore, or search the whole vault.</p>

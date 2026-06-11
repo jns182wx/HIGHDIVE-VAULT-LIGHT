@@ -1,16 +1,26 @@
 High Dive Vault Light QR Menu - Updated Build
 
-Upload these files to GitHub Pages with this exact structure:
+This package is synchronized with the dark build for bottle/content data.
 
-Vault-Light.html
+Actual structure:
+
+index.html
 vault-data.js
 vault-app.js
 vault-styles-light.css
 Vault_Items_Needing_Info.md
 assets/
-  highdive-logo.png
+  highdive-logo-dark.png
+  highdive-logo-distress.png
   highdive-logo-full.png
+  highdive-logo-light.png
+  highdive-logo.png
 
-For GitHub Pages, you can rename Vault-Light.html to index.html if you want the site to open automatically at the repo URL.
+Status:
+- 226 bottles
+- 11 shelves
+- Same vault-data.js as the dark build
+- MD checklist included
+- Light styling preserved
 
-This light build uses the updated vault-data.js with 226 bottles and the updated logo paths from the dark build.
+Upload these files to GitHub Pages with this structure. The site opens from index.html.

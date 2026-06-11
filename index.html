@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#FAF1DF" />
-  <title>The Vault · High Dive · Light · Harrisburg, PA</title>
-  <meta name="description" content="The High Dive vault — every bottle behind the bar, with flavor notes, prices, and what each one is best in. 226 bottles across 11 shelves." />
+  <meta name="theme-color" content="#F5EEE0" />
+  <title>The Vault · High Dive · Harrisburg, PA</title>
+  <meta name="description" content="The High Dive vault — every bottle behind the bar, with flavor notes, prices, and what each one is best in. 225 bottles across 11 shelves." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,7 +16,7 @@
 
   <header id="topbar">
     <button class="brand" aria-label="High Dive — home">
-      <img src="assets/highdive-logo.png" alt="High Dive" />
+      <img src="assets/highdive-logo-dark.png" alt="High Dive" />
       <span class="vlabel">The&nbsp;Vault</span>
     </button>
     <div class="spacer"></div>
@@ -46,5 +46,25 @@
 
   <script src="vault-data.js"></script>
   <script src="vault-app.js"></script>
+  <script>
+    /* Light theme: the brand mark is cream/gold (built for the dark menu) and
+       would vanish on paper. Swap any injected logo to the dark-teak variant. */
+    (function () {
+      var LIGHT = 'assets/highdive-logo-dark.png';
+      function swap(root) {
+        (root.matches && root.matches('img') ? [root] : [])
+          .concat([].slice.call((root.querySelectorAll ? root.querySelectorAll('img') : [])))
+          .forEach(function (img) {
+            if (/highdive-logo\.png$/.test(img.getAttribute('src') || '')) img.src = LIGHT;
+          });
+      }
+      swap(document);
+      new MutationObserver(function (muts) {
+        muts.forEach(function (m) {
+          [].forEach.call(m.addedNodes, function (n) { if (n.nodeType === 1) swap(n); });
+        });
+      }).observe(document.body, { childList: true, subtree: true });
+    })();
+  </script>
 </body>
 </html>
